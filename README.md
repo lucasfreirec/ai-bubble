@@ -4,7 +4,7 @@ Students: Lucas Freire Costa and André Santos
 
 ## Dataset
 
-The processed dataset is available on Google Drive:
+The dataset is available on Google Drive:
 
 [Link](https://drive.google.com/drive/folders/1h_EEmXZFAMAv0F9gzUbpNnR11BBmtzE-?usp=share_link)
 
