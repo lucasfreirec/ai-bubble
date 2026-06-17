@@ -29,11 +29,11 @@ LABEL_MAP = {
     "prompt engineering workflows and practical use of chatbots": "Software Dev",
     "developer tools APIs and machine learning infrastructure": "Software Dev",
 
-    # Societal impact, labor, and fear
-    "AI taking human jobs automation and unemployment": "Societal Impact & Fear",
-    "the future societal impact of artificial intelligence": "Societal Impact & Fear",
-    "AI safety risks regulation ethics and governance": "Societal Impact & Fear",
-    "misinformation surveillance privacy and harmful uses of AI": "Societal Impact & Fear",
+    # Societal and environmental impact
+    "AI taking human jobs automation and unemployment": "Societal or Environmental Impact",
+    "the future societal impact of artificial intelligence": "Societal or Environmental Impact",
+    "AI safety risks regulation ethics and governance": "Societal or Environmental Impact",
+    "misinformation surveillance privacy and harmful uses of AI": "Societal or Environmental Impact",
 
     # Creative industries and generated media
     "AI generated art images music video and creative media": "Creative AI",
@@ -41,15 +41,15 @@ LABEL_MAP = {
     "copyright training data plagiarism and consent in AI art": "Creative AI",
 
     # AI models, products, and companies
-    "ChatGPT Gemini Claude Grok Copilot and other AI chatbot products": "AI Products & Models",
-    "large language models generative AI and foundation models": "AI Products & Models",
-    "Google OpenAI Microsoft Meta Anthropic Nvidia and AI companies": "AI Products & Models",
-    "product launches announcements benchmarks and model capabilities in AI": "AI Products & Models",
+    "ChatGPT Gemini Claude Grok Copilot and other AI chatbot products": "AI Products and Models",
+    "large language models generative AI and foundation models": "AI Products and Models",
+    "Google OpenAI Microsoft Meta Anthropic Nvidia and AI companies": "AI Products and Models",
+    "product launches announcements benchmarks and model capabilities in AI": "AI Products and Models",
 
     # Research, education, and technical AI
-    "machine learning deep learning data science and artificial intelligence research": "AI Research & Education",
-    "AI in education teaching learning and academic work": "AI Research & Education",
-    "AI in healthcare science robotics and technical applications": "AI Research & Education",
+    "machine learning deep learning data science and artificial intelligence research": "AI Research and Education",
+    "AI in education teaching learning and academic work": "AI Research and Education",
+    "AI in healthcare science robotics and technical applications": "AI Research and Education",
 
     # General AI discussion
     "general discussion opinions news or jokes about artificial intelligence": "General AI Discussion",
@@ -65,12 +65,12 @@ LABEL_MAP = {
 
 
 AI_RELATED_GROUPS = {
-    "Financial Speculation",
+    "Financial Speculation or Markets",
     "Software Dev",
-    "Societal Impact & Fear",
+    "Societal or Environmental Impact",
     "Creative AI",
-    "AI Products & Models",
-    "AI Research & Education",
+    "AI Products and Models",
+    "AI Research and Education",
     "General AI Discussion",
 }
 

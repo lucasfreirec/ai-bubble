@@ -1,7 +1,5 @@
 # Ai-bubble
 
-Students: Lucas Freire Costa and Andre Santos
-
 This project studies public discussion around artificial intelligence and the idea of an "AI bubble" by combining social-media comments, emotion classification, FinBERT sentiment analysis, AI-topic filtering, and financial market indicators.
 
 The analysis compares two datasets:
@@ -10,12 +8,6 @@ The analysis compares two datasets:
 - YouTube comments from AI-related videos.
 
 The final outputs are cleaned CSV files and plots that summarize emotion distributions, FinBERT sentiment, AI-related topic categories, and the relationship between fear-related discussion and AI-linked asset prices.
-
-## Dataset
-
-The dataset is available on Google Drive:
-
-[Link](https://drive.google.com/drive/folders/1h_EEmXZFAMAv0F9gzUbpNnR11BBmtzE-?usp=share_link)
 
 ## Main Observations
 
@@ -46,7 +38,6 @@ The dataset is available on Google Drive:
 │   ├── bsky_final.csv
 │   ├── youtube_final.csv
 │   └── final_plots/
-├── youtube_api.ipynb
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -56,25 +47,12 @@ The dataset is available on Google Drive:
 
 The project is organized as a pipeline.
 
-1. Data collection and cleaning happens in `preprocessing/` and `youtube_api.ipynb`.
-2. LLM/zero-shot filtering identifies whether comments are AI-related and assigns broad AI topic groups.
-3. Emotion detection labels comments with emotions such as fear, joy, anger, disgust, sadness, and surprise.
+1. Data collection and cleaning happens in `preprocessing/`.
+2. Emotion detection labels comments with emotions such as fear, joy, anger, disgust, sadness, and surprise.
+3. LLM/zero-shot filtering identifies whether comments are AI-related and assigns broad AI topic groups.
 4. FinBERT sentiment analysis labels comments as positive, negative, or neutral.
 5. Final merged datasets are saved in `data/`.
 6. Analysis notebooks generate the final plots in `data/final_plots/`.
-
-## youtube_api.ipynb
-
-1. **Fetches** YouTube comments (Science & Technology videos, keyword `AI`) month by month via the YouTube Data API v3, with automatic checkpoint/resume.
-2. **Cleans** raw comments: removes duplicates, strips links and mentions, filters to English only.
-3. **Scores emotions** with `j-hartmann/emotion-english-distilroberta-base` (anger, disgust, fear, joy, sadness, surprise).
-4. **Filters** by confidence threshold and target keywords (AI, ChatGPT, Gemini, etc.).
-5. **Runs FinBERT** (`ProsusAI/finbert`) to label financial sentiment (positive / negative / neutral).
-6. **More filters** keeping only non-neutral, high-confidence FinBERT rows for downstream analysis.
-
-Output files are saved incrementally to `youtube_data/`.
-
-Create a file `.env` with your API key in order to execute the code.
 
 ## Preprocessing Folder
 
@@ -89,7 +67,7 @@ Create a file `.env` with your API key in order to execute the code.
 - `utils_emotions.py`: emotion-classification helpers.
 - `utils_finbert.py`: FinBERT helper functions.
 
-The AI-related topic labels are defined in `preprocessing/utils_llm_filtering.py`. Current category names avoid `&`, using labels such as `AI Products and Models`, `AI Research and Education`, and `Societal or Environmental Impact`.
+The AI-related topic labels are defined in `preprocessing/utils_llm_filtering.py`. 
 
 ## Analysis Folder
 
@@ -116,36 +94,6 @@ Important files include:
 - `bsky_final.csv`: final Bluesky dataset with emotion, FinBERT sentiment, and AI-related group labels.
 - `youtube_final.csv`: final YouTube dataset with emotion, FinBERT sentiment, and AI-related group labels.
 - `final_plots/`: exported plots used in the final analysis.
-
-## Final Plots
-
-The final plot folder includes combined figures such as:
-
-- `combined_emotion_distribution.png`
-- `combined_emotion_evolution_45d.png`
-- `combined_finbert_sentiment_distribution.png`
-- `combined_finbert_sentiment_by_emotion.png`
-- `combined_fear_ratio_assets_45d.png`
-- `combined_top_categories.png`
-- `combined_top_emotions_ai_related_groups.png`
-- `fear_ratio_asset_correlations_45d.png`
-
-## Setup
-
-Install the Python dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
-The current requirements are:
-
-- `pandas`
-- `torch`
-- `transformers`
-- `matplotlib`
-
-Some notebooks may also require packages used during data collection or market-price download, depending on which parts of the pipeline are rerun.
 
 ## Notes
 
